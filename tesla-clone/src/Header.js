@@ -25,10 +25,12 @@ function Header({isMenuOpen, setIsMenuOpen}) {
                 <Link to='/'>Solar Panels</Link>
             </div>
             <div className="header__right">
-                <Link to='/'>Shop</Link>
-                <Link to='/login'>Tesla Account</Link>
+                <Link to='/' className={isMenuOpen && 'header__link--hidden'}>Shop</Link>
+                <Link to='/login' className={isMenuOpen && 'header__link--hidden'}>Tesla Account</Link>
                 <div className="header__menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                    {/* Inline function: whatever is the current state of the icon change it to opposite on click */}
                     {isMenuOpen ? <CloseIcon /> : <MenuIcon />}
+                    {/* if menu is open then show close icon else show menu icon */}
                 </div>
             </div>
         </div>
